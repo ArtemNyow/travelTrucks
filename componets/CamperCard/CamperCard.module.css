@@ -1,0 +1,42 @@
+.camperCard {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.camperImage {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.camperName {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
+.camperLocation {
+    color: #666;
+}
+
+.camperPrice {
+    margin-top: 0.25rem;
+    font-weight: 600;
+}
+
+.favoriteBtn {
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    background-color: #e5e5e5;
+    border: none;
+    cursor: pointer;
+}
+
+.favoriteActive {
+    background-color: #f56565;
+    color: white;
+}

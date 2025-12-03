@@ -3,7 +3,7 @@
 
 /* root кольори */
 :root {
-  --background: #f7f7f7;
+  --background: #ffffff;
   --foreground: #171717;
 
   /* Основні кольори бренду */
@@ -49,6 +49,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   margin: 0 auto;
+}
+
+section {
+  padding: 0 64px;
 }
 
 * {

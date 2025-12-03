@@ -1,0 +1,4 @@
+.catalogLayout {
+    display: flex;
+    gap: 64px;
+}
