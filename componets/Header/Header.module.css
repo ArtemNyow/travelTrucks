@@ -1,0 +1,35 @@
+.header {
+    display: flex;
+    padding: 28px 64px;
+    align-items: center;
+    gap: 450px;
+    margin: 0 auto;
+    width: 1440px;
+    border-bottom: 1px solid var(--color-bg-lighter);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.iconlogo {}
+
+.list {
+    display: flex;
+    gap: 32px;
+}
+
+.listItem {}
+
+.itemText {
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--color-primary-dark);
+}
+
+.itemText:focus,
+.itemText:hover {
+    color: var(--color-error);
+}
