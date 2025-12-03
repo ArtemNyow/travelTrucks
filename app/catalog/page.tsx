@@ -1,3 +1,2 @@
-export default function CatalogPage() {
-  return <main>Catalog Page</main>;
-}
+// import CatalogPage from "./filter/[...slug]/page";
+// export default CatalogPage;

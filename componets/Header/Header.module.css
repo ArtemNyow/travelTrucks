@@ -13,14 +13,10 @@
     align-items: center;
 }
 
-.iconlogo {}
-
 .list {
     display: flex;
     gap: 32px;
 }
-
-.listItem {}
 
 .itemText {
     font-weight: 500;
