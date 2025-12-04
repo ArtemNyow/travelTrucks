@@ -1,29 +1,22 @@
-/* modern-normalize */
 @import "modern-normalize";
 
-/* root кольори */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 
-  /* Основні кольори бренду */
   --color-primary-dark: #101828;
   --color-primary: #475467;
   --color-primary-light: #6C717B;
 
-  /* Помилки / негативні повідомлення */
   --color-error-dark: #E44848;
   --color-error: #D84343;
 
-  /* Акцент / кнопки, важливі елементи */
   --color-accent: #FFC531;
 
-  /* Фони та обводки */
   --color-bg-light: #F7F7F7;
   --color-bg-lighter: #F2F4F7;
   --color-bg-grey: #DADDE1;
 
-  /* Текст / нейтральні елементи */
   --color-text-dark: #101828;
   --color-text: #475467;
   --color-white: #FFFFFF;
@@ -40,8 +33,9 @@
 html,
 body {
   max-width: 1440px;
-  height: 100vh;
+
   overflow-x: hidden;
+
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   color: var(--foreground);
   background: var(--background);

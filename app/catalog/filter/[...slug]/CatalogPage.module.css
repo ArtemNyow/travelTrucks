@@ -1,4 +1,12 @@
 .catalogLayout {
     display: flex;
+    padding: 0 64px;
+    padding-top: 48px;
     gap: 64px;
+}
+
+.camperListWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }

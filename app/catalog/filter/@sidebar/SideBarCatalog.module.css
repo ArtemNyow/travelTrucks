@@ -1,17 +1,7 @@
-/* styles.module.css
-    Містить стилі для CatalogPage, SidebarCatalog, CamperCard, Badge.
-*/
-
-/* =============================================================================
---- Global Layout (CatalogPage) ---
-============================================================================= */
-
 .catalogContainer {
     max-width: 1280px;
-    /* max-w-7xl */
     margin: 0 auto;
     padding: 32px 16px;
-    /* py-8 px-4 */
     font-family: sans-serif;
 }
 
@@ -19,10 +9,7 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-    /* gap-8 */
 }
-
-
 
 .camperListWrapper {
     display: flex;
@@ -36,13 +23,11 @@
     text-align: center;
     padding: 32px 0;
     color: #ef4444;
-    /* red-500 */
 }
 
 .loadingMessage,
 .noCampersMessage {
     color: #6b7280;
-    /* gray-500 */
 }
 
 .loadMoreWrapper {
@@ -53,11 +38,8 @@
 
 .loadMoreBtn {
     border: 1px solid #9ca3af;
-    /* border-gray-400 */
     padding: 12px 32px;
-    /* px-8 py-3 */
     border-radius: 9999px;
-    /* rounded-full */
     transition: all 0.2s;
     font-weight: 500;
     background: none;
@@ -66,33 +48,23 @@
 
 .loadMoreBtn:hover {
     border-color: #ef4444;
-    /* hover:border-red-500 */
     color: #ef4444;
-    /* hover:text-red-500 */
 }
-
-
-/* =============================================================================
---- Sidebar Styles (SidebarCatalog) ---
-============================================================================= */
 
 .sidebar {
     width: 360px;
-    border-right: 1px solid #e5e7eb;
     background: #fff;
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    padding: 0 64px;
-    box-sizing: content-box;
-}
 
+    box-sizing: content-box;
+
+}
 
 .sidebarLabel {
     display: block;
     color: #6b7280;
     margin-bottom: 8px;
-    /* mb-2 */
     font-size: 14px;
 }
 
@@ -103,77 +75,62 @@
 .sidebarInput {
     width: 100%;
     padding: 12px 12px 12px 40px;
-    /* p-3 pl-10 */
     background: #f3f4f6;
-    /* bg-gray-100 */
     border-radius: 8px;
-    /* rounded-lg */
     border: none;
     font-size: 16px;
+    color: var(--color-text-dark);
 }
 
 .sidebarInput:focus {
-    outline: 2px solid #f87171;
-    /* focus:ring-2 focus:ring-red-400 */
+    outline: 2px solid var(--color-error-dark);
 }
 
 .sidebarIconInside {
     position: absolute;
     left: 12px;
-    top: 14px;
-    /* top-3.5 */
+    top: 11px;
     width: 20px;
     height: 20px;
     color: #9ca3af;
-    /* text-gray-400 */
 }
 
 .sidebarSectionTitle {
     color: #6b7280;
-    /* text-gray-500 */
     font-weight: 500;
     margin-bottom: 16px;
-    /* mb-4 */
 }
 
 .sidebarBlockTitle {
     font-size: 18px;
-    /* text-lg */
     font-weight: 700;
-    /* font-bold */
-    margin-bottom: 16px;
-    /* mb-4 */
+    margin-bottom: 24px;
 }
 
 .filterGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 12px;
-    /* gap-3 */
-    padding-bottom: 24px;
-    /* pb-6 */
-    border-bottom: 1px solid #e5e7eb;
-    /* border-b border-gray-200 */
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
 }
 
 .radioGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
     gap: 12px;
-    /* gap-3 */
 }
 
 .sidebarBtn {
     margin-top: 16px;
     padding: 12px;
-    width: 100%;
+    width: 166px;
     background: #ef4444;
-    /* bg-red-500 */
     color: #fff;
     font-size: 16px;
     font-weight: 500;
     border-radius: 9999px;
-    /* rounded-full */
     border: none;
     cursor: pointer;
     transition: 0.2s;
@@ -181,80 +138,23 @@
 
 .sidebarBtn:hover {
     background: #dc2626;
-    /* hover:bg-red-600 */
 }
 
-/* --- FilterItem (Checkbox/Radio) Styles --- */
-.filterItem {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 12px;
-    /* p-3 */
-    border: 1px solid #e5e7eb;
-    /* border */
-    border-radius: 8px;
-    /* rounded-lg */
-    cursor: pointer;
-    transition: all 0.15s ease-in-out;
-}
 
-.filterItem:hover {
-    border-color: #fca5a5;
-    /* hover:border-red-300 */
-}
-
-.filterItem_checked {
-    border-color: #ef4444;
-    /* border-red-500 */
-    background-color: #fef2f2;
-    /* bg-red-50 */
-}
-
-.filterIcon {
-    margin-bottom: 8px;
-    /* mb-2 */
-    color: #374151;
-    /* text-gray-700 */
-}
 
 .filterIconSvg {
     width: 20px;
     height: 20px;
 }
 
-.filterLabel {
-    font-size: 14px;
-    /* text-sm */
-    font-weight: 500;
-    /* font-medium */
-    text-align: center;
-    line-height: 1.25;
+.mb40 {
+    margin-bottom: 40px;
 }
 
-.filterHiddenInput {
-    display: none;
-}
-
-.radioItemH24 {
-    height: 96px;
-    /* h-24 */
-}
-
-/* Utility classes for spacing in components */
-.mb6 {
-    margin-bottom: 24px;
-}
-
-.mb8 {
+.mb32 {
     margin-bottom: 32px;
 }
 
-
-/* =============================================================================
---- CamperCard Styles ---
-============================================================================= */
 
 .camperCard {
     border: 1px solid #e5e7eb;
@@ -383,7 +283,6 @@
     background-color: #dc2626;
 }
 
-/* --- Badge Component Styles --- */
 .badge {
     background-color: #f3f4f6;
     color: #1f2937;
