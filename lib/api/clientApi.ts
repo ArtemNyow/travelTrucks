@@ -2,7 +2,7 @@ import { nextServer } from "./api";
 import { isAxiosError } from "axios";
 interface GetCampersParams {
   location?: string;
-  type?: string;
+  form?: string;
   AC?: string;
   kitchen?: string;
 }
@@ -13,16 +13,8 @@ export const getCampers = async (
   limit: number = 4
 ) => {
   try {
-    console.log("Fetching campers with params:", { ...params, page, limit });
-
     const response = await nextServer.get("/campers", {
       params: { ...params, page, limit },
-    });
-
-    console.log("API response:", {
-      status: response.status,
-      data: response.data,
-      dataLength: response.data?.data?.length || 0,
     });
 
     const data = response.data?.data || [];

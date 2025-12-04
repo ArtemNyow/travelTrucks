@@ -4,6 +4,7 @@ import styles from "./SideBarCatalog.module.css";
 import FilterCheckbox from "@/components/FilterCheckbox/FilterCheckbox";
 import FilterRadio from "@/components/FilterRadio/FilterRadio";
 import SpriteIcon from "@/components/SpriteIcon/SpriteIcon";
+import { useCatalogStore } from "@/lib/store/campersStore";
 
 export interface LocalFilters {
   location: string;
@@ -16,6 +17,8 @@ export interface LocalFilters {
 }
 
 const SideBarCatalog = () => {
+  const { setFilters } = useCatalogStore();
+
   const [localFilters, setLocalFilters] = useState<LocalFilters>({
     location: "",
     form: "",
@@ -38,9 +41,16 @@ const SideBarCatalog = () => {
       } else {
         setLocalFilters((prev) => ({ ...prev, [name]: checked }));
       }
+    } else if (type === "radio") {
+      setLocalFilters((prev) => ({ ...prev, [name]: value }));
     } else {
       setLocalFilters((prev) => ({ ...prev, [name]: value }));
     }
+  };
+
+  const handleSearch = () => {
+    console.log("Applied filters:", localFilters);
+    setFilters(localFilters);
   };
 
   return (
@@ -164,7 +174,9 @@ const SideBarCatalog = () => {
         </div>
       </div>
 
-      <button className={styles.sidebarBtn}>Search</button>
+      <button className={styles.sidebarBtn} onClick={handleSearch}>
+        Search
+      </button>
     </aside>
   );
 };

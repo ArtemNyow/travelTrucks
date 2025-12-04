@@ -1,9 +1,13 @@
 "use client";
+
 import { useEffect } from "react";
 import styles from "./CatalogPage.module.css";
 import SideBarCatalog from "../@sidebar/SideBarCatalog";
 import CamperCard from "@/components/CamperCard/CamperCard";
 import { useCatalogStore } from "@/lib/store/campersStore";
+import Loader from "@/components/Loader/Loader";
+import LoaderSmall from "@/components/LoaderSmall/LoaderSmall";
+import ErrorMessage from "@/components/ErrorMessage/ErrorMessage";
 
 export default function CatalogPage() {
   const { campers, loading, error, page, total, fetchCampers } =
@@ -19,52 +23,58 @@ export default function CatalogPage() {
 
   const hasMore = campers.length < total;
 
+  const handleResetFilters = () => {
+    window.location.reload();
+  };
+
   return (
     <div className={styles.catalogContainer}>
       <div className={styles.catalogLayout}>
         <SideBarCatalog />
+
         <main className={styles.camperListMain}>
           <div className={styles.camperListWrapper}>
-            {/* Error Handling */}
-            {error && campers.length === 0 && (
-              <div className={styles.error}>{error}</div>
-            )}
-
-            {/* Loading initial state */}
-            {loading && campers.length === 0 && (
-              <div className={styles.loading}>Loading campers...</div>
-            )}
-
-            {/* List */}
-            {campers.length > 0 && (
-              <div className={styles.camperGrid}>
-                {campers.map((camper) => (
-                  <CamperCard
-                    key={`${camper.id}-${camper.name}`}
-                    camper={camper}
-                  />
-                ))}
-              </div>
-            )}
-
-            {/* No Results */}
-            {!loading && campers.length === 0 && !error && (
-              <div className={styles.noCampers}>
-                No campers found. Try adjusting your filters.
-              </div>
-            )}
-
-            {/* Load More Button */}
-            {hasMore && (
-              <div className={styles.loadMoreContainer}>
+            {error && (
+              <div className={styles.centerBox}>
+                <ErrorMessage message={error} />
                 <button
-                  onClick={handleLoadMore}
-                  disabled={loading}
-                  className={styles.loadMoreButton}
+                  onClick={handleResetFilters}
+                  className={styles.resetButton}
                 >
-                  {loading ? "Loading..." : "Load More"}
+                  Reset filters
                 </button>
               </div>
+            )}
+
+            {!error && (
+              <>
+                {loading && campers.length === 0 && <Loader />}
+
+                {campers.length > 0 && (
+                  <div className={styles.camperGrid}>
+                    {campers.map((camper) => (
+                      <CamperCard
+                        key={`${camper.id}-${camper.name}`}
+                        camper={camper}
+                      />
+                    ))}
+                  </div>
+                )}
+
+                {hasMore && !loading && campers.length > 0 && (
+                  <div className={styles.loadMoreContainer}>
+                    <button
+                      onClick={handleLoadMore}
+                      disabled={loading}
+                      className={styles.loadMoreButton}
+                    >
+                      Load More
+                    </button>
+                  </div>
+                )}
+
+                {loading && campers.length > 0 && <LoaderSmall />}
+              </>
             )}
           </div>
         </main>
