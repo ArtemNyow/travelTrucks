@@ -1,0 +1,54 @@
+.infoSection {
+    margin-top: 44px;
+    width: 100%;
+}
+
+.tabs {
+    display: flex;
+    position: relative;
+    gap: 40px;
+    border-bottom: 1px solid rgba(16, 24, 40, 0.2);
+    margin-bottom: 44px;
+}
+
+.tabButton {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #101828;
+    cursor: pointer;
+    padding: 0;
+    padding-bottom: 24px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.tabButton:not(.active) {
+    opacity: 0.8;
+}
+
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    background-color: #ff6600;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.contentWrapper {
+    display: flex;
+    gap: 41px;
+}
+
+.leftColumn {
+    width: 50%;
+}
+
+.rightColumn {
+    width: 50%;
+}

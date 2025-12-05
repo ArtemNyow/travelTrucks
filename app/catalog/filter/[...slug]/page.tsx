@@ -28,57 +28,54 @@ export default function CatalogPage() {
   };
 
   return (
-    <div className={styles.catalogContainer}>
-      <div className={styles.catalogLayout}>
-        <SideBarCatalog />
-
-        <main className={styles.camperListMain}>
-          <div className={styles.camperListWrapper}>
-            {error && (
-              <div className={styles.centerBox}>
-                <ErrorMessage message={error} />
-                <button
-                  onClick={handleResetFilters}
-                  className={styles.resetButton}
-                >
-                  Reset filters
-                </button>
-              </div>
-            )}
-
-            {!error && (
-              <>
-                {loading && campers.length === 0 && <Loader />}
-
-                {campers.length > 0 && (
-                  <div className={styles.camperGrid}>
-                    {campers.map((camper) => (
-                      <CamperCard
-                        key={`${camper.id}-${camper.name}`}
-                        camper={camper}
-                      />
-                    ))}
-                  </div>
-                )}
-
-                {hasMore && !loading && campers.length > 0 && (
-                  <div className={styles.loadMoreContainer}>
-                    <button
-                      onClick={handleLoadMore}
-                      disabled={loading}
-                      className={styles.loadMoreButton}
-                    >
-                      Load More
-                    </button>
-                  </div>
-                )}
-
-                {loading && campers.length > 0 && <LoaderSmall />}
-              </>
-            )}
-          </div>
-        </main>
+    <section>
+      <div className={styles.catalogContainer}>
+        <div className={styles.catalogLayout}>
+          <SideBarCatalog />
+          <main className={styles.camperListMain}>
+            <div className={styles.camperListWrapper}>
+              {error && (
+                <div className={styles.centerBox}>
+                  <ErrorMessage message={error} />
+                  <button
+                    onClick={handleResetFilters}
+                    className={styles.resetButton}
+                  >
+                    Reset filters
+                  </button>
+                </div>
+              )}
+              {!error && (
+                <>
+                  {loading && campers.length === 0 && <Loader />}
+                  {campers.length > 0 && (
+                    <div className={styles.camperGrid}>
+                      {campers.map((camper) => (
+                        <CamperCard
+                          key={`${camper.id}-${camper.name}`}
+                          camper={camper}
+                        />
+                      ))}
+                    </div>
+                  )}
+                  {hasMore && !loading && campers.length > 0 && (
+                    <div className={styles.loadMoreContainer}>
+                      <button
+                        onClick={handleLoadMore}
+                        disabled={loading}
+                        className={styles.loadMoreButton}
+                      >
+                        Load More
+                      </button>
+                    </div>
+                  )}
+                  {loading && campers.length > 0 && <LoaderSmall />}
+                </>
+              )}
+            </div>
+          </main>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

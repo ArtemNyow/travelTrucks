@@ -54,7 +54,7 @@ const SideBarCatalog = () => {
   ) => {
     setLocalFilters((prev) => ({
       ...prev,
-      [name]: isChecked ? "" : value, // якщо вже вибране — знімаємо
+      [name]: isChecked ? "" : value,
     }));
   };
 
@@ -65,7 +65,6 @@ const SideBarCatalog = () => {
 
   return (
     <aside className={styles.sidebar}>
-      {/* Location */}
       <div className={styles.mb40}>
         <label className={styles.sidebarLabel}>Location</label>
         <div className={styles.sidebarInputWrapper}>
@@ -81,7 +80,6 @@ const SideBarCatalog = () => {
         </div>
       </div>
 
-      {/* Filters */}
       <div className={styles.mb32}>
         <h3 className={styles.sidebarSectionTitle}>Filters</h3>
         <h4 className={styles.sidebarBlockTitle}>Vehicle equipment</h4>

@@ -16,10 +16,8 @@ export const getCampers = async (
     const response = await nextServer.get("/campers", {
       params: { ...params, page, limit },
     });
-
     const data = response.data?.data || [];
     const hasMore = data.length >= limit;
-
     return {
       data,
       total: response.data?.total || 0,
@@ -40,4 +38,9 @@ export const getCampers = async (
     }
     throw error;
   }
+};
+
+export const getCamperById = async (id: string) => {
+  const res = await nextServer.get(`/campers/${id}`);
+  return res.data;
 };
