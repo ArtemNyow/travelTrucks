@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 🚚 Travel Trucks / Camper Catalog
 
-First, run the development server:
+**Travel Trucks** — це сучасний, адаптивний **веб-застосунок** для ефективного пошуку та перегляду **кемперів**. Користувачі можуть легко **фільтрувати** транспортні засоби за різними критеріями, переглядати деталі, **рейтинги** та **відгуки**, а також **бронювати** кемпери.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Демо та Ресурси
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Робоча сторінка (Production)**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+[https://travel-trucks-six-psi.vercel.app](https://travel-trucks-six-psi.vercel.app/)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Вихідні файли (GitHub)**
 
-## Learn More
+[https://github.com/ArtemNyow/travelTrucks](https://github.com/ArtemNyow/travelTrucks)
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+----------
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ⚡ Основні Функціональні Можливості (Фічі)
 
-## Deploy on Vercel
+-   **Каталог Кемперів:** Перегляд усіх доступних транспортних засобів.
+    
+-   **Фільтрація:** Пошук за **локацією**, **типом кузова** та **зручностями** (AC, Kitchen, TV тощо). _Фільтрація реалізована на стороні бекенда._
+    
+-   **Пагінація:** Довантаження додаткових карток ("Load More") для ефективного відображення великої кількості даних.
+    
+-   **Детальний Огляд:** Окрема сторінка з галереєю фото, повними характеристиками та відгуками користувачів.
+    
+-   **Обране (Favorites):** Можливість додавати кемпери до списку обраних зі збереженням стану.
+    
+-   **Бронювання:** Форма для бронювання кемпера з нотифікацією про успішне відправлення.
+    
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+----------
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠 Технологічний Стек
+
+Проєкт побудований на сучасному стеку та відповідає високим стандартам розробки:
+
+-   **Frontend:** React 19.2.0, **TypeScript**, Vite
+    
+-   **Сторінки та Роутинг:**  **Next.js 16.0.6 (App Router)**
+    
+-   **Управління Станом:**  **Zustand** (глобальний стан для каталогу, фільтрів та обраного)
+    
+-   **HTTP-запити:**  **Axios**
+    
+-   **Форми:** Formik, Yup (для валідації)
+    
+-   **Дизайн:** Адаптивний інтерфейс, виконаний згідно з макетом.
+    
+
+### 🌐 API
+
+Для роботи з даними використовується готовий бекенд MockAPI: `https://66b1f8e71ca8ad33d4f5f63e.mockapi.io`.
+
+----------
+
+## 🚀 Запуск Проєкту Локально
+
+### 1. Встановлення залежностей
+
+`npm install`
+
+### 2. Налаштування змінних середовища
+
+Створіть файл `.env.local` у корені проєкту та вкажіть URL бекенда:
+
+`NEXT_PUBLIC_API_URL=http://localhost:3000`
+`BACKEND_API_URL=https://66b1f8e71ca8ad33d4f5f63e.mockapi.io`
+
+### 3. Запуск сервера розробки
+
+`npm run dev`
+
+
+Проєкт буде доступний за адресою [http://localhost:3000](http://localhost:3000/).
+
+----------
+
+## 👤 Автор
+
+Цей проєкт був розроблений як тестове завдання для компанії "TravelTrucks" (GoIT).
+
+**Артем Лихацький**  
+GitHub: [@ArtemNyow](https://github.com/ArtemNyow)
