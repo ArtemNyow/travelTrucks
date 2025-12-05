@@ -1,6 +1,19 @@
 import { LocalFilters } from "@/app/catalog/filter/@sidebar/SideBarCatalog";
 import styles from "./FilterRadio.module.css";
-import { ChangeEvent } from "react";
+
+interface FilterRadioProps {
+  name: keyof LocalFilters;
+  value: string;
+  label: string;
+  icon: React.ReactNode;
+  checked: boolean;
+  onChange: (
+    value: string,
+    name: keyof LocalFilters,
+    isChecked: boolean
+  ) => void;
+}
+
 const FilterRadio = ({
   name,
   value,
@@ -8,30 +21,20 @@ const FilterRadio = ({
   icon,
   checked,
   onChange,
-}: {
-  name: keyof LocalFilters;
-  value: string;
-  label: string;
-  icon: React.ReactNode;
-  checked: boolean;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-}) => {
+}: FilterRadioProps) => {
   const className = `${styles.filterItem} ${styles.radioItemH24} ${
     checked ? styles.filterItem_checked : ""
   }`;
+
+  const handleClick = () => {
+    onChange(value, name, checked); // передаємо стан батьку
+  };
+
   return (
-    <label className={className}>
-      <input
-        type="radio"
-        name={name}
-        value={value}
-        checked={checked}
-        onChange={onChange}
-        className={styles.filterHiddenInput}
-      />
+    <div className={className} onClick={handleClick}>
       <div className={styles.filterIcon}>{icon}</div>
       <span className={styles.filterLabel}>{label}</span>
-    </label>
+    </div>
   );
 };
 

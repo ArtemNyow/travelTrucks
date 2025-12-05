@@ -47,6 +47,16 @@ const SideBarCatalog = () => {
       setLocalFilters((prev) => ({ ...prev, [name]: value }));
     }
   };
+  const handleRadioChange = (
+    value: string,
+    name: keyof LocalFilters,
+    isChecked: boolean
+  ) => {
+    setLocalFilters((prev) => ({
+      ...prev,
+      [name]: isChecked ? "" : value, // якщо вже вибране — знімаємо
+    }));
+  };
 
   const handleSearch = () => {
     console.log("Applied filters:", localFilters);
@@ -144,7 +154,7 @@ const SideBarCatalog = () => {
               <SpriteIcon name="icon-grid" className={styles.filterIconSvg} />
             }
             checked={localFilters.form === "panelTruck"}
-            onChange={handleChange}
+            onChange={handleRadioChange}
           />
 
           <FilterRadio
@@ -155,7 +165,7 @@ const SideBarCatalog = () => {
               <SpriteIcon name="icon-grid-4" className={styles.filterIconSvg} />
             }
             checked={localFilters.form === "fullyIntegrated"}
-            onChange={handleChange}
+            onChange={handleRadioChange}
           />
 
           <FilterRadio
@@ -169,7 +179,7 @@ const SideBarCatalog = () => {
               />
             }
             checked={localFilters.form === "alcove"}
-            onChange={handleChange}
+            onChange={handleRadioChange}
           />
         </div>
       </div>
