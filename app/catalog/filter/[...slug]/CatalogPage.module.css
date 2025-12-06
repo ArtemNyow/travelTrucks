@@ -1,3 +1,8 @@
+.heroSection {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
 .catalogLayout {
     display: flex;
     padding: 0 64px;

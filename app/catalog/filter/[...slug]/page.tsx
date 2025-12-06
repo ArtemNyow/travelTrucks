@@ -28,7 +28,7 @@ export default function CatalogPage() {
   };
 
   return (
-    <section>
+    <section className={styles.heroSection}>
       <div className={styles.catalogContainer}>
         <div className={styles.catalogLayout}>
           <SideBarCatalog />
