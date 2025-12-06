@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
+import { Toaster } from "react-hot-toast";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -28,16 +29,16 @@ export const metadata: Metadata = {
     title: "TravelTrucks – Оренда кемперів",
     description:
       "Оренда кемперів для подорожей. Каталог, бронювання та відгуки.",
-    url: "http://localhost:3000",
+    url: "https://travel-trucks-six-psi.vercel.app/",
     siteName: "TravelTrucks",
-    // images: [
-    //   {
-    //     url: "/og-image.png",
-    //     width: 1200,
-    //     height: 630,
-    //     alt: "TravelTrucks – оренда кемперів",
-    //   },
-    // ],
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "TravelTrucks – оренда кемперів",
+      },
+    ],
     locale: "uk_UA",
     type: "website",
   },
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     title: "TravelTrucks – Оренда кемперів",
     description:
       "Оренда кемперів для подорожей. Каталог, бронювання та відгуки.",
-    // images: [""],
+    images: ["/og-image.png"],
   },
 };
 
@@ -57,6 +58,7 @@ export default function RootLayout({
     <html lang="uk">
       <body className={inter.variable}>
         <Header />
+        <Toaster />
         {children}
       </body>
     </html>

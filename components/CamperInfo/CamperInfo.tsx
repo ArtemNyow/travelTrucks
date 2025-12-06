@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useRef, useLayoutEffect } from "react";
 import styles from "./CamperInfo.module.css";
 import BookingForm from "../BookingForm/BookingForm";

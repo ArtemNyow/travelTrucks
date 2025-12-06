@@ -1,17 +1,20 @@
 .formContainer {
     border: 1px solid #10182833;
     border-radius: 10px;
-    padding: 44px 57px;
+    padding: 24px;
+    width: 100%;
 }
 
 .title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     margin-bottom: 8px;
+    line-height: 1.2;
 }
 
 .subtitle {
     color: #475467;
+    font-size: 14px;
     margin-bottom: 24px;
 }
 
@@ -21,18 +24,26 @@
     gap: 14px;
 }
 
+.inputWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .input,
 .textarea {
     background-color: #F7F7F7;
     border: none;
     border-radius: 10px;
-    padding: 18px;
+    padding: 14px;
     font-family: inherit;
     width: 100%;
     color: var(--color-text-dark);
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5;
+    box-sizing: border-box;
 }
 
 .input:-webkit-autofill {
@@ -50,43 +61,16 @@
     color: white;
     border: none;
     border-radius: 200px;
-    padding: 16px 60px;
+    padding: 16px;
     font-weight: 500;
-    width: 160px;
+    font-size: 16px;
+    width: 100%;
     margin-top: 10px;
     cursor: pointer;
-    align-self: center;
 }
 
 .button:hover {
     background-color: #D84343;
-}
-
-.inputWrapper {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-.floatingLabel {
-    position: absolute;
-    left: 18px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #888;
-    pointer-events: none;
-    transition: all 0.2s ease;
-    background-color: transparent;
-}
-
-.filled,
-.input:focus+.floatingLabel {
-    top: -8px;
-    left: 14px;
-    font-size: 12px;
-    color: #475467;
-    background: #F7F7F7;
-    padding: 0 4px;
 }
 
 .errorText {
@@ -97,7 +81,6 @@
     margin-left: 4px;
 }
 
-
 .inputError {
     border: 1px solid #E44848 !important;
     background-color: #fff5f5;
@@ -106,4 +89,30 @@
 .inputError:focus {
     outline: none;
     border-color: #E44848;
+}
+
+@media screen and (min-width: 1440px) {
+    .formContainer {
+        padding: 44px 57px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .input,
+    .textarea {
+        font-size: 16px;
+        padding: 18px;
+    }
+
+    .button {
+        width: 160px;
+        padding: 16px 60px;
+        align-self: center;
+    }
 }

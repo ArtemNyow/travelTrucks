@@ -45,6 +45,7 @@ export default function CamperGallery({ camper }: Props) {
           open={isOpen}
           index={photoIndex}
           close={() => setIsOpen(false)}
+          controller={{ closeOnBackdropClick: true }}
           styles={{
             container: { backgroundColor: "rgba(0,0,0,0.3)" },
           }}

@@ -1,9 +1,7 @@
 "use client";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import iziToast from "izitoast";
-import "izitoast/dist/css/iziToast.min.css";
-
+import toast from "react-hot-toast";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "./BookingForm.module.css";
@@ -22,28 +20,22 @@ export default function BookingForm() {
     initialValues: {
       name: "",
       email: "",
-      bookingDate: "",
+      bookingDate: null,
       comment: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values, { resetForm }) => {
       try {
-        iziToast.success({
-          title: "Success",
-          message: "Booking request sent!",
-          position: "topRight",
-          timeout: 3000,
-          progressBar: true,
+        toast.success("Booking request sent!", {
+          position: "top-right",
+          duration: 3000,
         });
 
         resetForm();
       } catch {
-        iziToast.error({
-          title: "Error",
-          message: "Please fill required fields",
-          position: "topRight",
-          timeout: 3500,
-          progressBar: true,
+        toast.error("Please fill required fields", {
+          position: "top-right",
+          duration: 3500,
         });
       }
     },
@@ -97,11 +89,7 @@ export default function BookingForm() {
 
         <div className={styles.inputWrapper}>
           <DatePicker
-            selected={
-              formik.values.bookingDate
-                ? new Date(formik.values.bookingDate)
-                : null
-            }
+            selected={formik.values.bookingDate}
             onChange={(date: Date | null) => {
               formik.setFieldValue("bookingDate", date);
             }}

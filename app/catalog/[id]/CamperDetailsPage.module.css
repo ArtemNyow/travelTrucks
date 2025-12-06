@@ -1,74 +1,53 @@
+.camperDetailsPageSection {
+    padding-top: 24px;
+    padding-bottom: 40px;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 0 auto;
+}
+
 .content {
     display: flex;
     flex-direction: column;
 }
 
-.camperDetailsPageSection {
-    padding-top: 48px;
-    padding-bottom: 80px;
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
 .header {
     display: flex;
     flex-direction: column;
+    gap: 8px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    word-wrap: break-word;
+}
+
+.ratingLocation {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.rating,
+.location {
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .totalReviews {
     text-decoration: underline;
 }
 
-.title {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1.33333;
-    margin-bottom: 8px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    line-clamp: 1;
-    overflow: hidden;
-    margin-bottom: 8px;
-}
-
-.ratingLocation {
-    display: flex;
-    gap: 16px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 16px;
-}
-
-.rating {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
 .filterIconSvg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
-}
-
-.location {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 400;
-    font-size: 16px;
-    gap: 4px;
-    line-height: 1.5;
-}
-
-.filterIconSvg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 16px;
     height: 16px;
 }
@@ -77,6 +56,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    margin-bottom: 16px;
 }
 
 .price {
@@ -86,9 +66,45 @@
 }
 
 .description {
-    margin-top: 28px;
+    margin-top: 24px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5;
     color: var(--color-text);
+}
+
+@media screen and (min-width: 375px) {
+    .camperDetailsPageSection {
+        width: 375px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .camperDetailsPageSection {
+        padding-left: 32px;
+        padding-right: 32px;
+        width: 768px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .ratingLocation {
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+        font-size: 16px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .camperDetailsPageSection {
+        width: 1440px;
+        padding: 48px 64px 80px 64px;
+    }
 }

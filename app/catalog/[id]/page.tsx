@@ -4,10 +4,51 @@ import SpriteIcon from "@/components/SpriteIcon/SpriteIcon";
 
 import CamperGallery from "@/components/CamperGallery/CamperGallery";
 import CamperInfo from "@/components/CamperInfo/CamperInfo";
-
+import { Metadata } from "next";
 type Props = {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const camper = await getCamperById(params.id);
+
+  if (!camper) {
+    return {
+      title: "Кемпер не знайдено | TravelTrucks",
+    };
+  }
+
+  const price = camper.price.toFixed(2);
+  const totalReviews = camper.reviews.length;
+
+  return {
+    title: `${camper.name} | Оренда кемпера за €${price} | TravelTrucks`,
+    description: `Оренда кемпера ${camper.name} у місті ${
+      camper.location
+    }. Ціна: €${price}. Рейтинг: ${
+      camper.rating
+    } (${totalReviews} відгуків). ${camper.description.substring(0, 150)}...`,
+    keywords: [
+      camper.name,
+      "оренда кемпера",
+      camper.location,
+      "ціна кемпера",
+      "забронювати кемпер",
+    ],
+    openGraph: {
+      title: `${camper.name} - Всі деталі та бронювання`,
+      description: `Оренда кемпера ${camper.name} за €${price}.`,
+      images: [
+        {
+          url: camper.gallery[0]?.original || "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: `Фото кемпера ${camper.name}`,
+        },
+      ],
+    },
+  };
+}
 
 export default async function CamperDetailsPage({ params }: Props) {
   const { id } = await params;

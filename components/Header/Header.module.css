@@ -18,9 +18,10 @@
     align-items: center;
 }
 
-.list {
-    display: none;
+.list {}
 
+.list .listItem:first-child {
+    display: none
 }
 
 .itemText {
@@ -52,6 +53,10 @@
         gap: 24px;
         display: flex;
         align-items: center;
+    }
+
+    .list .listItem:first-child {
+        display: block
     }
 }
 
