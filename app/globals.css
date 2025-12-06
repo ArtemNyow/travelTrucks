@@ -45,9 +45,12 @@ body {
   margin: 0 auto;
 }
 
-section {
-  padding: 0 64px;
 
+
+@media screen and (min-width: 1440px) {
+  section {
+    padding: 0 64px;
+  }
 }
 
 * {
