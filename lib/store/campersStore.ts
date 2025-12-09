@@ -60,7 +60,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
 
     try {
       const params = {
-        location: filters.location || undefined,
+        location: filters.location.trim() || undefined,
         form: filters.form || undefined,
         AC: filters.AC ? "true" : undefined,
         kitchen: filters.kitchen ? "true" : undefined,

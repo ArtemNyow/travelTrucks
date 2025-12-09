@@ -48,16 +48,18 @@ export default function CatalogPage() {
               {!error && (
                 <>
                   {loading && campers.length === 0 && <Loader />}
+
                   {campers.length > 0 && (
-                    <div className={styles.camperGrid}>
+                    <ul className={styles.camperGrid}>
                       {campers.map((camper) => (
                         <CamperCard
                           key={`${camper.id}-${camper.name}`}
                           camper={camper}
                         />
                       ))}
-                    </div>
+                    </ul>
                   )}
+
                   {hasMore && !loading && campers.length > 0 && (
                     <div className={styles.loadMoreContainer}>
                       <button

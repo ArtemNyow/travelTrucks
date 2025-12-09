@@ -27,7 +27,7 @@ export default function CamperCard({ camper }: CamperCardProps) {
   };
 
   return (
-    <article className={styles.card}>
+    <li className={styles.card}>
       <div className={styles.imageWrapper}>
         <Image
           src={camper.gallery[0].thumb}
@@ -45,6 +45,9 @@ export default function CamperCard({ camper }: CamperCardProps) {
             <p className={styles.price}>€{camper.price.toFixed(2)}</p>
             <button
               type="button"
+              aria-label={
+                isFavorite ? "Remove from favorites" : "Add to favorites"
+              }
               className={`${styles.favoriteBtn} ${
                 isAnimating ? styles.animateHeart : ""
               }`}
@@ -113,6 +116,6 @@ export default function CamperCard({ camper }: CamperCardProps) {
           Show more
         </Link>
       </div>
-    </article>
+    </li>
   );
 }

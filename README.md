@@ -1,86 +1,83 @@
-
 # 🚚 Travel Trucks / Camper Catalog
 
-**Travel Trucks** — це сучасний, адаптивний **веб-застосунок** для ефективного пошуку та перегляду **кемперів**. Користувачі можуть легко **фільтрувати** транспортні засоби за різними критеріями, переглядати деталі, **рейтинги** та **відгуки**, а також **бронювати** кемпери.
+**Travel Trucks** is a modern, responsive **web application** for browsing, filtering, and booking **campers**.  
+Users can easily search vehicles using multiple filters, view detailed specifications, **ratings**, **reviews**, and submit **booking requests**.
 
-## ✨ Демо та Ресурси
+---
 
-**Робоча сторінка (Production)**
+## ✨ Demo & Resources
 
-[https://travel-trucks-six-psi.vercel.app](https://travel-trucks-six-psi.vercel.app/)
+**Live Demo (Production):**  
+https://travel-trucks-six-psi.vercel.app
 
-**Вихідні файли (GitHub)**
+**GitHub Repository:**  
+https://github.com/ArtemNyow/travelTrucks
 
-[https://github.com/ArtemNyow/travelTrucks](https://github.com/ArtemNyow/travelTrucks)
+---
 
+## ⚡ Features
 
-----------
+- **Camper Catalog:** Browse all available campers with images, prices, and specifications.
+- **Advanced Filtering:**  
+  Filter by **location**, **vehicle type**, and **amenities** (AC, kitchen, TV, bathroom, etc.).  
+  _Filtering is implemented on the backend side._
+- **Pagination:** “Load More” functionality for efficient data loading.
+- **Camper Details Page:**  
+  Full description, photo gallery, technical details, and user reviews.
+- **Favorites:**  
+  Add campers to Favorites and keep them saved even after page reload.
+- **Booking Form:**  
+  Validation with Formik + Yup and success notification after submission.
+- **Responsive Design:**  
+  Fully adaptive layout based on the original design mockups.
 
-## ⚡ Основні Функціональні Можливості (Фічі)
+---
 
--   **Каталог Кемперів:** Перегляд усіх доступних транспортних засобів.
-    
--   **Фільтрація:** Пошук за **локацією**, **типом кузова** та **зручностями** (AC, Kitchen, TV тощо). _Фільтрація реалізована на стороні бекенда._
-    
--   **Пагінація:** Довантаження додаткових карток ("Load More") для ефективного відображення великої кількості даних.
-    
--   **Детальний Огляд:** Окрема сторінка з галереєю фото, повними характеристиками та відгуками користувачів.
-    
--   **Обране (Favorites):** Можливість додавати кемпери до списку обраних зі збереженням стану.
-    
--   **Бронювання:** Форма для бронювання кемпера з нотифікацією про успішне відправлення.
-    
+## 🛠 Tech Stack
 
-----------
+- **Next.js 16.0.6 (App Router)**
+- **React 19**, **TypeScript**
+- **Zustand** — global state management (catalog, filters, favorites)
+- **Axios** — HTTP client
+- **Formik + Yup** — forms & validation
+- **Responsive, pixel-perfect design** according to the Figma template
 
-## 🛠 Технологічний Стек
+### 🌐 Backend API
 
-Проєкт побудований на сучасному стеку та відповідає високим стандартам розробки:
+Uses MockAPI:  
+`https://66b1f8e71ca8ad33d4f5f63e.mockapi.io`
 
--   **Frontend:** React 19.2.0, **TypeScript**, Vite
-    
--   **Сторінки та Роутинг:**  **Next.js 16.0.6 (App Router)**
-    
--   **Управління Станом:**  **Zustand** (глобальний стан для каталогу, фільтрів та обраного)
-    
--   **HTTP-запити:**  **Axios**
-    
--   **Форми:** Formik, Yup (для валідації)
-    
--   **Дизайн:** Адаптивний інтерфейс, виконаний згідно з макетом.
-    
+---
 
-### 🌐 API
+## 🚀 Local Setup
 
-Для роботи з даними використовується готовий бекенд MockAPI: `https://66b1f8e71ca8ad33d4f5f63e.mockapi.io`.
+### 1. Install Dependencies
 
-----------
+npm install
 
-## 🚀 Запуск Проєкту Локально
+---
 
-### 1. Встановлення залежностей
+### 2. Configure Environment Variables
 
-`npm install`
+Create .env.local in the project root:
 
-### 2. Налаштування змінних середовища
+# env
 
-Створіть файл `.env.local` у корені проєкту та вкажіть URL бекенда:
+NEXT_PUBLIC_API_URL=http://localhost:3000
+BACKEND_API_URL=https://66b1f8e71ca8ad33d4f5f63e.mockapi.io
 
-`NEXT_PUBLIC_API_URL=http://localhost:3000`
-`BACKEND_API_URL=https://66b1f8e71ca8ad33d4f5f63e.mockapi.io`
+### 3. Start Development Server
 
-### 3. Запуск сервера розробки
+npm run dev
 
-`npm run dev`
+---
 
+Project will be available at:
+http://localhost:3000
 
-Проєкт буде доступний за адресою [http://localhost:3000](http://localhost:3000/).
+### 👤 Author
 
-----------
+This project was developed as a technical assignment for TravelTrucks (GoIT).
 
-## 👤 Автор
-
-Цей проєкт був розроблений як тестове завдання для компанії "TravelTrucks" (GoIT).
-
-**Артем Лихацький**  
-GitHub: [@ArtemNyow](https://github.com/ArtemNyow)
+Artem Lykhatskyi
+GitHub: https://github.com/ArtemNyow
