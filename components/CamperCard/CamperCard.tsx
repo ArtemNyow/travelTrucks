@@ -79,38 +79,38 @@ export default function CamperCard({ camper }: CamperCardProps) {
 
         <p className={styles.description}>{camper.description}</p>
 
-        <div className={styles.features}>
+        <ul className={styles.features}>
           {camper.AC && (
-            <span className={styles.feature}>
+            <li className={styles.feature}>
               <SpriteIcon className={styles.featureIcon} name="icon-wind" />
               AC
-            </span>
+            </li>
           )}
           {camper.kitchen && (
-            <span className={styles.feature}>
+            <li className={styles.feature}>
               <SpriteIcon className={styles.featureIcon} name="icon-cup" />
               Kitchen
-            </span>
+            </li>
           )}
           {camper.TV && (
-            <span className={styles.feature}>
+            <li className={styles.feature}>
               <SpriteIcon className={styles.featureIcon} name="icon-TV" />
               TV
-            </span>
+            </li>
           )}
           {camper.bathroom && (
-            <span className={styles.feature}>
+            <li className={styles.feature}>
               <SpriteIcon className={styles.featureIcon} name="icon-shower" />
               Bathroom
-            </span>
+            </li>
           )}
           {camper.transmission === "automatic" && (
-            <span className={styles.feature}>
+            <li className={styles.feature}>
               <SpriteIcon className={styles.featureIcon} name="icon-diagram" />
               Automatic
-            </span>
+            </li>
           )}
-        </div>
+        </ul>
 
         <Link href={`/catalog/${camper.id}`} className={styles.showMoreBtn}>
           Show more

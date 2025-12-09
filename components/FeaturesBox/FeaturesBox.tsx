@@ -14,74 +14,74 @@ export default function FeaturesBox({ camper }: Props) {
   }
   return (
     <div className={styles.featuresContainer}>
-      <div className={styles.features}>
+      <ul className={styles.features}>
         {camper.AC && (
-          <span className={styles.feature}>
+          <li className={styles.feature}>
             <SpriteIcon className={styles.featureIcon} name="icon-wind" />
             AC
-          </span>
+          </li>
         )}
         {camper.kitchen && (
-          <span className={styles.feature}>
+          <li className={styles.feature}>
             <SpriteIcon className={styles.featureIcon} name="icon-cup" />
             Kitchen
-          </span>
+          </li>
         )}
         {camper.TV && (
-          <span className={styles.feature}>
+          <li className={styles.feature}>
             <SpriteIcon className={styles.featureIcon} name="icon-TV" />
             TV
-          </span>
+          </li>
         )}
         {camper.bathroom && (
-          <span className={styles.feature}>
+          <li className={styles.feature}>
             <SpriteIcon className={styles.featureIcon} name="icon-shower" />
             Bathroom
-          </span>
+          </li>
         )}
         {camper.transmission === "automatic" && (
-          <span className={styles.feature}>
+          <li className={styles.feature}>
             <SpriteIcon className={styles.featureIcon} name="icon-diagram" />
             Automatic
-          </span>
+          </li>
         )}
         {camper.radio && (
-          <span className={styles.feature}>
+          <li className={styles.feature}>
             <SpriteIcon className={styles.featureIcon} name="icon-radio" />
             Radio
-          </span>
+          </li>
         )}
         {camper.refrigerator && (
-          <span className={styles.feature}>
+          <li className={styles.feature}>
             <SpriteIcon className={styles.featureIcon} name="icon-fridge" />
             Refrigerator
-          </span>
+          </li>
         )}
         {camper.microwave && (
-          <span className={styles.feature}>
+          <li className={styles.feature}>
             <SpriteIcon className={styles.featureIcon} name="icon-microwave" />
             Microwave
-          </span>
+          </li>
         )}
         {camper.gas && (
-          <span className={styles.feature}>
+          <li className={styles.feature}>
             <SpriteIcon className={styles.featureIcon} name="icon-gas" />
             Gas
-          </span>
+          </li>
         )}
         {camper.engine && (
-          <span className={styles.feature}>
+          <li className={styles.feature}>
             <SpriteIcon className={styles.featureIcon} name="icon-petrol" />
             {capitalizeFirstLetter(camper.engine)}
-          </span>
+          </li>
         )}
         {camper.water && (
-          <span className={styles.feature}>
+          <li className={styles.feature}>
             <SpriteIcon className={styles.featureIcon} name="icon-water" />
             Water
-          </span>
+          </li>
         )}
-      </div>
+      </ul>
       <div>
         <h2 className={styles.featureTitle}>Vehicle details</h2>
         <ul className={styles.vehicleDetailsList}>
